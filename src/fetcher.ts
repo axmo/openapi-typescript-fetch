@@ -128,7 +128,7 @@ function getFetchParams(request: Request) {
     ...request.init,
     method: request.method.toUpperCase(),
     headers,
-    body,
+    // body,
   }
 
   return { url, init }
