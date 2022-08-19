@@ -32,6 +32,8 @@ function queryString(params: Record<string, unknown>): string {
     if (value != null) {
       if (Array.isArray(value)) {
         value.forEach((value) => qs.push(encode(key, value)))
+      } else if (typeof value === 'object') {
+        qs.push(queryString(value as any).slice(1))
       } else {
         qs.push(encode(key, value))
       }

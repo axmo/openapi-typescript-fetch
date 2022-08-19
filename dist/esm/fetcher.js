@@ -21,6 +21,9 @@ function queryString(params) {
             if (Array.isArray(value)) {
                 value.forEach((value) => qs.push(encode(key, value)));
             }
+            else if (typeof value === 'object') {
+                qs.push(queryString(value).slice(1));
+            }
             else {
                 qs.push(encode(key, value));
             }
