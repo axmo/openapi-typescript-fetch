@@ -60,7 +60,7 @@
   },
   "scripts": {
     "clean": "rimraf './dist'",
-    "build": "npx tsc --project tsconfig.json && npx tsc --project tsconfig.cjs.json",
+    "build": "npm run clean && tsc --project tsconfig.json && tsc --project tsconfig.cjs.json",
     "lint": "eslint .",
     "prepare": "npm run build",
     "test": "npm run build && jest",
